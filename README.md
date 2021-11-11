@@ -1,6 +1,6 @@
 # DeutscheNachrichten
 
-Diese App hat vor, eine einfache App darzustellen, worin sie zeigt an, wie man eine leichte 
+Diese App hat vor, eine einfache App darzustellen, worin sie anzeigt, wie man eine leichte 
 Nachrichtensapp auf die deutsche Sprache herstellt.
 
 * Folgende APIs:
