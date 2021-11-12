@@ -12,15 +12,20 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.deutschenachrichten.BuildConfig
 import com.example.deutschenachrichten.R
+import com.example.deutschenachrichten.data.model.NewsResponse
 import com.example.deutschenachrichten.databinding.FragmentListBinding
+import com.example.deutschenachrichten.ui.adapter.NewsAdapter
+import com.example.deutschenachrichten.ui.viewmodel.NewsViewModel
+import com.example.weatherapp.utils.Status
 //import com.example.weatherapp.BuildConfig
 //import com.example.weatherapp.R
 //import com.example.weatherapp.data.model.ForecastResponse
 //import com.example.weatherapp.data.model.WeatherResponse
 //import com.example.weatherapp.databinding.FragmentListBinding
 //import com.example.weatherapp.ui.adapter.ClickListener
-//import com.example.weatherapp.ui.adapter.WeatherAdapter
+//import com.example.weatherapp.ui.adapter.newsAdapter
 //import com.example.weatherapp.ui.viewmodel.ForecastViewModel
 //import com.example.weatherapp.ui.viewmodel.WeatherViewModel
 //import com.example.weatherapp.utils.Status
@@ -33,8 +38,8 @@ class ListFragment : Fragment() {
     private val TAG = "ListFragment"
 
     lateinit var binding: FragmentListBinding
-//    private val forecastViewModel: ForecastViewModel by activityViewModels()
-//    private val weatherAdapter by lazy { WeatherAdapter() }
+    private val forecastViewModel: NewsViewModel by activityViewModels()
+    private val newsAdapter by lazy { NewsAdapter() }
     private val args by navArgs<ListFragmentArgs>()
 
     override fun onCreateView(
@@ -49,10 +54,10 @@ class ListFragment : Fragment() {
 
     fun initUI() {
         binding.apply {
-            toolbarTitle.text = args.city
+            toolbarTitle.text = args.title
             recyclerView.apply {
                 layoutManager = LinearLayoutManager(requireContext())
-                adapter = weatherAdapter
+                adapter = newsAdapter
                 addItemDecoration(
                     DividerItemDecoration(
                         context,
@@ -66,7 +71,7 @@ class ListFragment : Fragment() {
     }
 
     private fun initAPI() {
-        forecastViewModel.fetchForecast(args.city, BuildConfig.API_KEY)
+        forecastViewModel.fetchNews(args.title, "BuildConfig.API_KEY")
             .observe(viewLifecycleOwner) {
                 when (it.status) {
                     Status.SUCCESS -> {
@@ -90,11 +95,11 @@ class ListFragment : Fragment() {
             }
     }
 
-    private fun renderList(items: Response<ForecastResponse>) {
-        weatherAdapter.apply {
+    private fun renderList(items: Response<NewsResponse>) {
+        newsAdapter.apply {
 
-            Log.d(TAG, "renderList: ${items.body()?.list?.size}")
-            items.body()?.list?.let { addData(it, args.city) }
+//            Log.d(TAG, "renderList: ${items.body()?.list?.size}")
+//            items.body()?.list?.let { addData(it, args.city) }
         }
     }
 

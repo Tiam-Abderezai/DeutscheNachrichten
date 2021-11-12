@@ -9,23 +9,23 @@
         android:name="com.example.deutschenachrichten.ui.view.ListFragment"
         android:label="fragment_list"
         tools:layout="@layout/fragment_list" >
-<!--        <action-->
-<!--            android:id="@+id/action_listFragment_to_detailFragment"-->
-<!--            app:destination="@id/detailFragment" />-->
-<!--        <argument-->
-<!--            android:name="city"-->
-<!--            app:argType="string" />-->
+        <action
+            android:id="@+id/action_listFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+        <argument
+            android:name="title"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.deutschenachrichten.ui.view.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
-<!--        <argument-->
-<!--            android:name="weatherResponse"-->
-<!--            app:argType="com.example.weatherapp.data.model.WeatherResponse" />-->
-<!--        <argument-->
-<!--            android:name="city"-->
-<!--            app:argType="string" />-->
+        <argument
+            android:name="newsResponse"
+            app:argType="com.example.deutschenachrichten.data.model.NewsResponse" />
+        <argument
+            android:name="city"
+            app:argType="string" />
     </fragment>
 </navigation>
