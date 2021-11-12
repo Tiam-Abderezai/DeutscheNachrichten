@@ -1,5 +1,6 @@
 package com.example.weatherapp.di
 import com.example.deutschenachrichten.data.remote.RetrofitInstance
+import com.example.deutschenachrichten.utils.Constants
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -16,14 +17,10 @@ import java.util.concurrent.TimeUnit
 object RetrofitModule {
 
     @Provides
-    fun providesBaseUrl(): String {
-        return "https://api.openweathermap.org/data/2.5/"
-    }
+    fun providesBaseUrl(): String = Constants.BASE_URL
 
     @Provides
-    fun providesLoggingInterceptor(): HttpLoggingInterceptor {
-        return HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
-    }
+    fun providesLoggingInterceptor(): HttpLoggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
 
     @Provides
     fun provideOkHttpClient(loggingInterceptor: HttpLoggingInterceptor): OkHttpClient {
@@ -39,9 +36,7 @@ object RetrofitModule {
     }
 
     @Provides
-    fun provideConverterFactory(): Converter.Factory {
-        return GsonConverterFactory.create()
-    }
+    fun provideConverterFactory(): Converter.Factory = GsonConverterFactory.create()
 
     @Provides
     fun provideRetrofitClient(okHttpClient: OkHttpClient, baseUrl: String, converterFactory: Converter.Factory): Retrofit {
@@ -53,7 +48,5 @@ object RetrofitModule {
     }
 
     @Provides
-    fun provideRestApiService(retrofit: Retrofit): RetrofitInstance {
-        return retrofit.create(RetrofitInstance::class.java)
-    }
+    fun provideRestApiService(retrofit: Retrofit): RetrofitInstance = retrofit.create(RetrofitInstance::class.java)
 }

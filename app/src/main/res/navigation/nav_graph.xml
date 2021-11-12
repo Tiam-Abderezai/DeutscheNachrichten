@@ -20,9 +20,9 @@
         tools:layout="@layout/fragment_detail" >
         <argument
             android:name="newsResponse"
-            app:argType="com.example.deutschenachrichten.data.model.NewsResponse" />
-        <argument
-            android:name="city"
-            app:argType="string" />
+            app:argType="com.example.deutschenachrichten.data.model.Article" />
+<!--        <argument-->
+<!--            android:name="city"-->
+<!--            app:argType="string" />-->
     </fragment>
 </navigation>

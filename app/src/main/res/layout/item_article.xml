@@ -16,22 +16,19 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/iv_image"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             tools:src="@drawable/ic_article"
             android:textStyle="bold"
-            android:textSize="32dp"
-            android:textAlignment="center"
             />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tv_title"
-            android:layout_width="200dp"
-            android:layout_height="48dp"
-            tools:text="title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="title of the news article"
             android:textStyle="bold"
-            android:textSize="32dp"
-            android:textAlignment="center"
+            android:textSize="16sp"
             />
     </androidx.appcompat.widget.LinearLayoutCompat>
 

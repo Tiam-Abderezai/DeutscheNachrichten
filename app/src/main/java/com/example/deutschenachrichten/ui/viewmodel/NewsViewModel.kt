@@ -11,10 +11,10 @@ import javax.inject.Inject
 class NewsViewModel @Inject constructor(
     private val newsRepo: NewsRepository
 ) : ViewModel() {
-    fun fetchNews(url: String, api_key: String) = liveData(Dispatchers.IO) {
+    fun fetchNews(api_key: String) = liveData(Dispatchers.IO) {
         emit(Resource.loading(null))
         try {
-            emit(Resource.success(data = newsRepo.getNews(url, api_key)))
+            emit(Resource.success(data = newsRepo.getNews(api_key)))
         } catch (exception: Exception) {
             emit(Resource.error(exception.message ?: "Error Occurred!", data = null))
         }

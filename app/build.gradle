@@ -42,10 +42,6 @@ android {
     kapt {
         correctErrorTypes true
     }
-    // Da findet die API_KEY statt
-    def localProperties = new Properties()
-    localProperties.load(new FileInputStream(rootProject.file("local.properties")))
-
 }
 
 dependencies {

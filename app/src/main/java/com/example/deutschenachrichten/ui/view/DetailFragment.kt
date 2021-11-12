@@ -28,7 +28,7 @@ class DetailFragment : Fragment(){
 
     fun initUI() {
         binding.apply {
-            toolbarTitle.text = args.city
+//            toolbarTitle.text = args.city
 //            tvMainTemp.text = args.newsResponse.main?.temp.toString().trimSubstring(0,2)
             btnButton.setOnClickListener {
                 findNavController().popBackStack()
