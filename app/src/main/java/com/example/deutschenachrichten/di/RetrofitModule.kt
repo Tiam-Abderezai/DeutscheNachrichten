@@ -1,5 +1,5 @@
 package com.example.weatherapp.di
-import com.example.deutschenachrichten.data.remote.ApiService
+import com.example.deutschenachrichten.data.remote.RetrofitInstance
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -53,7 +53,7 @@ object RetrofitModule {
     }
 
     @Provides
-    fun provideRestApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun provideRestApiService(retrofit: Retrofit): RetrofitInstance {
+        return retrofit.create(RetrofitInstance::class.java)
     }
 }
