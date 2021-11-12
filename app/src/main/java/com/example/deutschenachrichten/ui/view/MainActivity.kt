@@ -1,6 +1,6 @@
-package com.example.deutschenachrichten
+package com.example.deutschenachrichten.ui.view
 
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
+import com.example.deutschenachrichten.R
 
 class MainActivity : AppCompatActivity(R.layout.activity_main)
