@@ -18,7 +18,7 @@ import com.example.deutschenachrichten.data.model.NewsResponse
 import com.example.deutschenachrichten.databinding.FragmentListBinding
 import com.example.deutschenachrichten.ui.adapter.NewsAdapter
 import com.example.deutschenachrichten.ui.viewmodel.NewsViewModel
-import com.example.weatherapp.utils.Status
+import com.example.deutschenachrichten.utils.Status
 //import com.example.weatherapp.BuildConfig
 //import com.example.weatherapp.R
 //import com.example.weatherapp.data.model.ForecastResponse
@@ -26,7 +26,7 @@ import com.example.weatherapp.utils.Status
 //import com.example.weatherapp.databinding.FragmentListBinding
 //import com.example.weatherapp.ui.adapter.ClickListener
 //import com.example.weatherapp.ui.adapter.newsAdapter
-//import com.example.weatherapp.ui.viewmodel.ForecastViewModel
+//import com.example.weatherapp.ui.viewmodel.newsViewModel
 //import com.example.weatherapp.ui.viewmodel.WeatherViewModel
 //import com.example.weatherapp.utils.Status
 import kotlinx.android.synthetic.main.fragment_list.*
@@ -38,9 +38,8 @@ class ListFragment : Fragment() {
     private val TAG = "ListFragment"
 
     lateinit var binding: FragmentListBinding
-    private val forecastViewModel: NewsViewModel by activityViewModels()
+    private val newsViewModel: NewsViewModel by activityViewModels()
     private val newsAdapter by lazy { NewsAdapter() }
-    private val args by navArgs<ListFragmentArgs>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -54,7 +53,7 @@ class ListFragment : Fragment() {
 
     fun initUI() {
         binding.apply {
-            toolbarTitle.text = args.title
+//            toolbarTitle.text =
             recyclerView.apply {
                 layoutManager = LinearLayoutManager(requireContext())
                 adapter = newsAdapter
@@ -71,7 +70,7 @@ class ListFragment : Fragment() {
     }
 
     private fun initAPI() {
-        forecastViewModel.fetchNews(args.title, "BuildConfig.API_KEY")
+        newsViewModel.fetchNews("args.title", "BuildConfig.API_KEY")
             .observe(viewLifecycleOwner) {
                 when (it.status) {
                     Status.SUCCESS -> {

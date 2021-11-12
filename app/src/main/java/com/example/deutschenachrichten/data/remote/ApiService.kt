@@ -12,7 +12,7 @@ import retrofit2.http.Query
 interface ApiService {
     @GET("news")
     suspend fun getNews(
-        @Query("q") city: String,
+        @Query("q") url: String,
         @Query("appid") api_key: String
     ): Response<NewsResponse>
 }

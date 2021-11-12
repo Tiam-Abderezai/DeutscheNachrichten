@@ -20,23 +20,21 @@ import okhttp3.internal.trimSubstring
 import retrofit2.Response
 import javax.inject.Inject
 import kotlin.math.log
-private const val TAG = "NewsAdapter"
 
 class NewsAdapter @Inject constructor(
-) : RecyclerView.Adapter<NewsAdapter.WeatherViewHolder>() {
-
+) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
     private val items = mutableListOf<NewsResponse>()
     private lateinit var city: String
     
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WeatherViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return WeatherViewHolder(binding)
+        return NewsViewHolder(binding)
     }
 
     override fun getItemCount(): Int = items.size
 
-    override fun onBindViewHolder(holder: WeatherViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val item = items[position]
         Log.d("newsAdapter", "onBindViewHolder: $item")
         holder.bind(item)
@@ -52,8 +50,9 @@ class NewsAdapter @Inject constructor(
         }
     }
 
-    class WeatherViewHolder(itemView: ItemNewsBinding) : RecyclerView.ViewHolder(itemView.root) {
-        fun bind(item: NewsResponse) {
+    class NewsViewHolder(itemView: ItemNewsBinding) : RecyclerView.ViewHolder(itemView.root) {
+        private val TAG = "NewsViewHolder"
+            fun bind(item: NewsResponse) {
 //            val weather = item.weather.get(0).description.toString()
 //            val temp = item.main?.temp.toString().trimSubstring(0,2)
             Log.d(TAG, "bind: ")

@@ -9,7 +9,7 @@
         android:id="@+id/tbar_frag_detail"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/design_default_color_primary"
+        android:background="@color/teal_700"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:layout_constraintTop_toTopOf="parent">

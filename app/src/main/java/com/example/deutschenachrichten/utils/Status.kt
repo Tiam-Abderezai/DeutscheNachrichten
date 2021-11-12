@@ -1,4 +1,4 @@
-package com.example.weatherapp.utils
+package com.example.deutschenachrichten.utils
 
 enum class Status {
     SUCCESS,

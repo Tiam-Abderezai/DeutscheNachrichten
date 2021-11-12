@@ -1,4 +1,4 @@
-package com.example.weatherapp.utils
+package com.example.deutschenachrichten.utils
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {
 
