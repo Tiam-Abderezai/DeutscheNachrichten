@@ -29,55 +29,57 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:textColor="@color/white"
-            tools:text="City"/>
+            />
 
     </androidx.appcompat.widget.Toolbar>
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_main_temp"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="80sp"
         android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintTop_toBottomOf="@id/tbar_frag_detail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_publishedAt"
+        tools:text="Kamoʻoalewa: Erdnaher Asteroid und Quasisatellit stammt womöglich vom Mond - heise online" />
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_publishedAt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="15sp"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/iv_image"
+        tools:text="2021-11-12T10:08:00Z"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/iv_image"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:src="@drawable/ic_article"
         android:layout_marginTop="35dp"
-        app:layout_constraintTop_toBottomOf="@+id/tbar_frag_detail"
+        app:layout_constraintTop_toBottomOf="@+id/tv_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="72" />
+        app:layout_constraintBottom_toTopOf="@id/tv_content"
+        />
+
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_feels_like"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
         android:textColor="@color/black"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="35dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_main_temp"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="Feels Like: 78"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_weather_main"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="38sp"
-        android:textColor="@color/black"
-        android:layout_marginTop="35dp"
-        android:layout_marginStart="35dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_feels_like"
         app:layout_constraintStart_toStartOf="parent"
-        tools:text="Clouds"/>
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_weather_desc"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="25sp"
-        android:textColor="@color/black"
-        android:layout_marginStart="35dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_weather_main"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:text="broken clouds"/>
+        app:layout_constraintTop_toBottomOf="@+id/iv_image"
+        tools:text="Einer von nur einer Handvoll Asteroiden, die die Erde als sogenannte Quasisatelliten begleiten, ist womöglich der erste bekannte Himmelskörper, der seinen Ursprung auf dem Erdmond hat. Das legen ausf… " />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
