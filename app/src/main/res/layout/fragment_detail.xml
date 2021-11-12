@@ -11,8 +11,11 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/teal_700"
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
-        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/webview"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <TextView
             android:id="@+id/btn_button"
@@ -26,60 +29,69 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
-            android:textSize="20sp"
-            android:textStyle="bold"
             android:textColor="@color/white"
-            />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="25sp"
-        app:layout_constraintTop_toBottomOf="@id/tbar_frag_detail"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_publishedAt"
-        tools:text="Kamoʻoalewa: Erdnaher Asteroid und Quasisatellit stammt womöglich vom Mond - heise online" />
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_publishedAt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/black"
-        android:textSize="15sp"
-        app:layout_constraintTop_toBottomOf="@id/tv_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/iv_image"
-        tools:text="2021-11-12T10:08:00Z"
-        />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_image"
-        android:layout_width="128dp"
-        android:layout_height="128dp"
-        android:src="@drawable/ic_article"
-        android:layout_marginTop="35dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_content"
-        />
-
-
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/tv_content"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:textColor="@color/black"
-        android:textSize="25sp"
+    <WebView
+        android:id="@+id/webview"
+        android:layout_width="fill_parent"
+        android:layout_height="650dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_image"
-        tools:text="Einer von nur einer Handvoll Asteroiden, die die Erde als sogenannte Quasisatelliten begleiten, ist womöglich der erste bekannte Himmelskörper, der seinen Ursprung auf dem Erdmond hat. Das legen ausf… " />
+        app:layout_constraintTop_toBottomOf="@id/tbar_frag_detail" />
+
+<!--    <com.google.android.material.textview.MaterialTextView-->
+<!--        android:id="@+id/tv_title"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tbar_frag_detail"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/tv_publishedAt"-->
+<!--        tools:text="Kamoʻoalewa: Erdnaher Asteroid und Quasisatellit stammt womöglich vom Mond - heise online" />-->
+<!--    <com.google.android.material.textview.MaterialTextView-->
+<!--        android:id="@+id/tv_publishedAt"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="15sp"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_title"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/iv_image"-->
+<!--        tools:text="2021-11-12T10:08:00Z"-->
+<!--        />-->
+
+<!--    <com.google.android.material.imageview.ShapeableImageView-->
+<!--        android:id="@+id/iv_image"-->
+<!--        android:layout_width="128dp"-->
+<!--        android:layout_height="128dp"-->
+<!--        android:src="@drawable/ic_article"-->
+<!--        android:layout_marginTop="35dp"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/tv_title"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintBottom_toTopOf="@id/tv_content"-->
+<!--        />-->
+
+
+<!--    <com.google.android.material.textview.MaterialTextView-->
+<!--        android:id="@+id/tv_content"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="500dp"-->
+<!--        android:textColor="@color/black"-->
+<!--        android:textSize="25sp"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/iv_image"-->
+<!--        tools:text="Einer von nur einer Handvoll Asteroiden, die die Erde als sogenannte Quasisatelliten begleiten, ist womöglich der erste bekannte Himmelskörper, der seinen Ursprung auf dem Erdmond hat. Das legen ausf… " />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

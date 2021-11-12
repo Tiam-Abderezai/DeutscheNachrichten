@@ -28,8 +28,10 @@ class DetailFragment : Fragment(){
 
     fun initUI() {
         binding.apply {
-//            toolbarTitle.text = args.city
-//            tvMainTemp.text = args.newsResponse.main?.temp.toString().trimSubstring(0,2)
+//            tvTitle.text = args.newsResponse.title
+//            tvPublishedAt.text = args.newsResponse.publishedAt
+//            tvContent.text = args.newsResponse.description
+            args.newsResponse.url?.let { webview.loadUrl(it) }
             btnButton.setOnClickListener {
                 findNavController().popBackStack()
             }
@@ -37,4 +39,11 @@ class DetailFragment : Fragment(){
 
     }
 
+//    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+//        if (keyCode == KeyEvent.KEYCODE_BACK && binding.webview.canGoBack()) {
+//            binding.webview.goBack()
+//            return true
+//        }
+//        return super.onKeyDown(keyCode, event)
+//    }
 }
