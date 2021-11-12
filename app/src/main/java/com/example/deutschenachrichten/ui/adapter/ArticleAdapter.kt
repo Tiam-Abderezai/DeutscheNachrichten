@@ -43,10 +43,10 @@ class ArticleAdapter @Inject constructor(
         private val TAG = "ArticleViewHolder"
             fun bind(article: Article) {
             val title = article.title.toString()
-//            val image = item.main?.temp.toString().trimSubstring(0,2)
+            val source = article.source.name.toString()
             Log.d(TAG, "bind: $title")
             itemView.tv_title.text = title
-//            itemView.tv_temp.text = "Temp ${temp}"
+            itemView.tv_source.text = source.lowercase()
         }
     }
 

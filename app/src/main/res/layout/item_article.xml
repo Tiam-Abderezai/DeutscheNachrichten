@@ -14,20 +14,23 @@
         android:background="@color/grey"
         android:padding="16dp">
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/iv_image"
-            android:layout_width="wrap_content"
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tv_title"
+            android:layout_width="310dp"
             android:layout_height="match_parent"
-            tools:src="@drawable/ic_article"
+            tools:text="Titel der Beiträge liegen da."
+            android:textAlignment="textStart"
             android:textStyle="bold"
+            android:textSize="16sp"
             />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/tv_title"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:text="title of the news article"
-            android:textStyle="bold"
+            android:id="@+id/tv_source"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            tools:text="Spiegel"
+            android:textAlignment="textEnd"
+            android:textStyle="italic"
             android:textSize="16sp"
             />
     </androidx.appcompat.widget.LinearLayoutCompat>
